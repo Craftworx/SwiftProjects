@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61F44ED22561963200E5E15A /* lang_nl.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61F44ECF2561963200E5E15A /* lang_nl.plist */; };
+		61F44ED32561963200E5E15A /* lang_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61F44ED02561963200E5E15A /* lang_en.plist */; };
+		61F44ED42561963200E5E15A /* lang_fr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61F44ED12561963200E5E15A /* lang_fr.plist */; };
 		F080C5E72553256B004288D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080C5E62553256B004288D6 /* AppDelegate.swift */; };
 		F080C5E92553256D004288D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F080C5E82553256D004288D6 /* Assets.xcassets */; };
 		F080C5EC2553256D004288D6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F080C5EA2553256D004288D6 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61F44ECF2561963200E5E15A /* lang_nl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lang_nl.plist; sourceTree = "<group>"; };
+		61F44ED02561963200E5E15A /* lang_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lang_en.plist; sourceTree = "<group>"; };
+		61F44ED12561963200E5E15A /* lang_fr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lang_fr.plist; sourceTree = "<group>"; };
 		F080C5E32553256B004288D6 /* ExempleDictionnaireFichier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExempleDictionnaireFichier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F080C5E62553256B004288D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F080C5E82553256D004288D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +38,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61F44ED52561964100E5E15A /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				61F44ED02561963200E5E15A /* lang_en.plist */,
+				61F44ED12561963200E5E15A /* lang_fr.plist */,
+				61F44ECF2561963200E5E15A /* lang_nl.plist */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		F080C5DA2553256A004288D6 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +72,7 @@
 				F080C5EA2553256D004288D6 /* MainMenu.xib */,
 				F080C5ED2553256D004288D6 /* Info.plist */,
 				F080C5EE2553256D004288D6 /* ExempleDictionnaireFichier.entitlements */,
+				61F44ED52561964100E5E15A /* Languages */,
 			);
 			path = ExempleDictionnaireFichier;
 			sourceTree = "<group>";
@@ -118,7 +135,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F080C5E92553256D004288D6 /* Assets.xcassets in Resources */,
+				61F44ED22561963200E5E15A /* lang_nl.plist in Resources */,
 				F080C5EC2553256D004288D6 /* MainMenu.xib in Resources */,
+				61F44ED32561963200E5E15A /* lang_en.plist in Resources */,
+				61F44ED42561963200E5E15A /* lang_fr.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +290,14 @@
 				CODE_SIGN_ENTITLEMENTS = ExempleDictionnaireFichier/ExempleDictionnaireFichier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HMB5N6U244;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ExempleDictionnaireFichier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.guillaumeg.ExempleDictionnaireFichier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -291,13 +312,14 @@
 				CODE_SIGN_ENTITLEMENTS = ExempleDictionnaireFichier/ExempleDictionnaireFichier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HMB5N6U244;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ExempleDictionnaireFichier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.guillaumeg.ExempleDictionnaireFichier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

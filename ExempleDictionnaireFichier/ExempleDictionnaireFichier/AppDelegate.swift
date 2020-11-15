@@ -24,31 +24,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	var languageDict: NSMutableDictionary? {
 		didSet {
+            //callback
 			print(languageDict)
 		}
 	}
 	var language = Language.French {
 		didSet {
 			//lorsque la variable 'language' prendra une nouvelle valeur, le block de code ci dessous sera executé
-			switch language {
-			case .French:
-				languageDict = NSMutableDictionary(contentsOf: self.saveURL(filename: "lang_fr.plist"))
-			case .Dutch:
-				languageDict = NSMutableDictionary(contentsOf: self.saveURL(filename: "lang_nl.plist"))
-			case .English:
-				languageDict = NSMutableDictionary(contentsOf: self.saveURL(filename: "lang_en.plist"))
-			}
+            var dictURL: URL?
+            
+            switch language {
+            case .French:
+                dictURL = self.languageDictURL(filename: "lang_fr")
+            case .Dutch:
+                dictURL = self.languageDictURL(filename: "lang_nl")
+            case .English:
+                dictURL = self.languageDictURL(filename: "lang_en")
+            }
+            
+            if (dictURL != nil) {
+                // '!' transforme la variable en non optionnel (attention qu'elle ne soit pas nil !)
+                languageDict = NSMutableDictionary(contentsOf: dictURL!)
+            }
 		}
 	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
+        // assignation pour faire appel au callback didset du language
 		language = .French
+        //équivalent if let
 		guard let dict = languageDict else {
 			return
 		}
 		
 		//dict["title"] = "blabla"
+        // changement de la valeur à la clé LanguageDictionaryTitleKey dans le dictionaire
 		dict[LanguageDictionaryTitleKey] = "Another value"
 	}
 
@@ -73,6 +84,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
+    /*
+     //ne sert à rien dans ce contexte
+     //laissé à titre informatif
 	@IBAction func saveButtonPushed(sneder: Any) {
 		if let dict = self.languageDict {
 			do {
@@ -84,8 +98,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			print("empty_dictionary")
 		}
 	}
+	*/
 	
-	
+    /*
 	func saveURL(filename: String?) -> URL {
 		var result = FileManager.default.homeDirectoryForCurrentUser
 		if let name = filename {
@@ -94,6 +109,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		return result
 	}
+    */
+    
+    func languageDictURL(filename: String?) -> URL? {
+        return Bundle.main.url(forResource: filename, withExtension: "plist")
+    }
 
 }
 
