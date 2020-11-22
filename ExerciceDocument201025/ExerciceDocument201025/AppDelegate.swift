@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let text = "\(textNameInputByUser.stringValue) \(textFirstNameInputByUser.stringValue)"
             let text2 = "est apparu ici cet après-midi"
             
-            let file = "file.txt" //this is the file. we will write to and read from it
+            let file = "fileOfExerciceDocument201025.txt" //this is the file. we will write to and read from it
             
             if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 let fileURL = dir.appendingPathComponent(file) //writing
@@ -34,8 +34,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     try text2.write(to: fileURL, atomically: true, encoding: .utf8)
                     
                 }
-                    
-                    
                     
                 catch {/* error handling here */}
                 
