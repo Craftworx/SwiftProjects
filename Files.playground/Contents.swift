@@ -1,7 +1,7 @@
 import Cocoa
 // Première partie purement théorique. Voyons la différence entre le path et l'URL, qui ne sont pas du même type
 // le path est un String qui définit le chemin comme en UNIX
-let completePathOfMyFile = "/Users/Al/Desktop/Files.playground"
+let completePathOfMyFile = "/Users/Al/Swift/Github/SwiftProjects/Files.playground"
 print(completePathOfMyFile)
 //l'URL est une sytème d'adressage universel (incluant l'Internet). en swift on utilise l'Url, et on on va déclarer cett URL à partir du Path, en fait on convertit le String en URL qui un type particulier en swift.
 let completeUrlOfMyFile = URL(fileURLWithPath: completePathOfMyFile)
@@ -13,7 +13,7 @@ print(completeUrlOfMyFile)
 let home = FileManager.default.homeDirectoryForCurrentUser
 print(home)
 // A partir de là on va pouvoir doner une adresse à un fichier qui marchera pour n'importe quel utilisateur.
-let playgroundPath = "Desktop/File.playground"
+let playgroundPath = "/Users/Al/Swift/Github/SwiftProjects/File.playground"
 // ici nous modifions seuk-lement l'Url et on tilise les méthodes liées au "type" Url"
 let playgroundUrl = home.appendingPathComponent(playgroundPath)
 

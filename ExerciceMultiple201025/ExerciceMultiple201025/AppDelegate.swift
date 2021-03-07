@@ -47,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
         let frText2 = "est apparu(e) ici cet après-midi"
         let enText2 = "showed up today in the afternoon"
         
+        
         if isFrenchSelected {
             text = "\(text) \(frText2)"
         } else {

@@ -48,4 +48,6 @@ print("alors")
 //It’s common to see guard used one or more times at the start of methods, because it’s used to verify conditions are correct up front. This makes our code easier to read than if we tried to check a condition then run some code, then check another condition and run some different code.
 
 //So, use if let if you just want to unwrap some optionals, but prefer guard let if you’re specifically checking that conditions are correct before continuing.
-//
+
+// attention ne fonctionne pas directement dans un ficheir main car contient un return !!!
+
